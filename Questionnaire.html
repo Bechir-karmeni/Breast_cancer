@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire Médical</title>
+    <link rel="stylesheet" type="text/css" href="assets/style_questionnaire.css">
+</head>
+<body>
+    <h2>Questionnaire Depistage Cancer Du Sein</h2>
+    <form id="formulaireMedical" method="post" action="questionnaire.php">
+        <label for="date">Date :</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="nomPrenom">Nom & Prénom :</label>
+        <input type="text" id="nomPrenom" name="nomPrenom" required>
+
+        <label for="age">Âge :</label>
+        <input type="number" id="age" name="age" required><br><br>
+
+        <label for="poids">Poids (en kg) :</label>
+        <input type="number" id="poids" name="poids" required><br><br>
+
+        <label for="taille">Taille (en m) :</label>
+        <input type="number" id="taille" name="taille" required><br><br>
+
+        <label for="imc">IMC (Indice de Masse Corporelle) :</label>
+        <span id="imcValue">N/A</span><br><br>
+
+        <label for="tabagisme">Tabagisme:</label>
+        <div>
+            <input type="radio" id="tabagismeOui" name="tabagisme" value="Oui">Oui
+            <input type="radio" id="tabagismeNon" name="tabagisme" value="Non">Non
+        </div><br><br>
+        
+        <div id="paquetsAnneesQuestion" style="display: none;">
+            <label for="paquetsAnnees">Précisez le Nombre de Paquets-annees :</label>
+            <input type="number" id="paquetsAnnees" name="paquetsAnnees">
+        </div><br><br>
+
+        <label for="paAlcool">PA alcool:</label>
+        <div>
+            <input type="radio" id="paAlcoolOui" name="paAlcool" value="Oui">Oui
+            <input type="radio" id="paAlcoolNon" name="paAlcool" value="Non">Non
+        </div><br><br>
+
+        <label for="regimeAlimentaire">Régime Alimentaire :</label>
+        <div>
+            <label for="glucides">Glucides:</label>
+            <input type="radio" id="glucidesOui" name="glucides" value="Oui">Oui
+            <input type="radio" id="glucidesNon" name="glucides" value="Non">Non
+        </div>
+
+        <div>
+            <label for="lippides">Lipides :</label>
+            <input type="radio" id="lippidesOui" name="lippides" value="Oui">Oui
+            <input type="radio" id="lippidesNon" name="lippides" value="Non">Non
+        </div>
+
+        <div>
+            <label for="fruits">Fruits :</label>
+            <input type="radio" id="fruitsOui" name="fruits" value="Oui">Oui
+            <input type="radio" id="fruitsNon" name="fruits" value="Non">Non
+        </div>
+
+        <div>
+            <label for="legumes">Légumes :</label>
+            <input type="radio" id="legumesOui" name="legumes" value="Oui">Oui
+            <input type="radio" id="legumesNon" name="legumes" value="Non">Non
+        </div>
+
+        <div>
+            <label for="cereales">Céréales :</label>
+            <input type="radio" id="cerealesOui" name="cereales" value="Oui">Oui
+            <input type="radio" id="cerealesNon" name="cereales" value="Non">Non
+        </div>
+
+        <div>
+            <label for="viandesRouges">Viandes Rouges :</label>
+            <input type="radio" id="viandesRougesOui" name="viandesRouges" value="Oui">Oui
+            <input type="radio" id="viandesRougesNon" name="viandesRouges" value="Non">Non
+        </div>
+
+        <div>
+            <label for="sel">Sel :</label>
+            <input type="radio" id="selOui" name="sel" value="Oui">Oui
+            <input type="radio" id="selNon" name="sel" value="Non">Non
+        </div><br><br>
+
+        <label for="activitePhysique">Activité Physique :</label>
+        <div>
+            <input type="radio" id="activitePhysiqueOui" name="activitePhysique" value="Oui">Oui
+            <input type="radio" id="activitePhysiqueNon" name="activitePhysique" value="Non">Non
+        </div><br><br>
+
+        <label for="contraceptifsOraux">Prise de Contraceptifs Oraux :</label>
+        <div>
+            <input type="radio" id="contraceptifsOrauxOui" name="contraceptifsOraux" value="Oui">Oui
+            <input type="radio" id="contraceptifsOrauxNon" name="contraceptifsOraux" value="Non">Non
+        </div><br><br>
+
+        <div id="dureeContraceptifsQuestion" style="display: none;">
+            <label for="dureeContraceptifs">Durée (en années) :</label>
+            <input type="number" id="dureeContraceptifs" name="dureeContraceptifs">
+        </div>
+        <label for="atcdsPersonnels">ATCDs Personnels de Cancer :</label>
+        <div>
+            <input type="radio" id="atcdsPersonnelsOui" name="atcdsPersonnels" value="Oui">Oui
+            <input type="radio" id="atcdsPersonnelsNon" name="atcdsPersonnels" value="Non">Non
+        </div><br><br>
+
+        <div id="preciserATCDSPersonnelsQuestion" style="display: none;">
+            <label for="preciserATCDSPersonnels">Préciser :</label>
+            <textarea id="preciserATCDSPersonnels" name="preciserATCDSPersonnels"></textarea>
+        </div><br><br>
+
+        <label for="atcdsFamiliaux">ATCDs Familiaux de Cancer :</label>
+        <div>
+            <input type="radio" id="atcdsFamiliauxOui" name="atcdsFamiliaux" value="Oui">Oui
+            <input type="radio" id="atcdsFamiliauxNon" name="atcdsFamiliaux" value="Non">Non
+        </div><br><br>
+
+        <div id="preciserATCDSFamiliauxQuestion" style="display: none;">
+            <label for="preciserATCDSFamiliaux">Préciser :</label>
+            <textarea id="preciserATCDSFamiliaux" name="preciserATCDSFamiliaux"></textarea>
+        </div><br><br>
+
+        <label for="posteDeTravail">Poste de Travail :</label>
+        <input type="text" id="posteDeTravail" name="posteDeTravail"><br><br>
+
+        <label for="dateEmbauche">Date d'embauche :</label>
+        <input type="date" id="dateEmbauche" name="dateEmbauche"><br><br>
+
+        <label for="travailDeNuit">Travail de Nuit :</label>
+        <div>
+            <input type="radio" id="travailDeNuitOui" name="travailDeNuit" value="Oui">Oui
+            <input type="radio" id="travailDeNuitNon" name="travailDeNuit" value="Non">Non
+        </div><br><br>
+
+        <div id="anneesTravailDeNuitQuestion" style="display: none;">
+            <label for="anneesTravailDeNuit">Depuis combien d'années :</label>
+            <input type="number" id="anneesTravailDeNuit" name="anneesTravailDeNuit">
+        </div><br><br>
+
+        <label for="manipulationCytostatiques">Manipulation de Cytostatiques :</label>
+        <div>
+            <input type="radio" id="manipulationCytostatiquesOui" name="manipulationCytostatiques" value="Oui">Oui
+            <input type="radio" id="manipulationCytostatiquesNon" name="manipulationCytostatiques" value="Non">Non
+        </div><br><br>
+
+        <div id="anneesManipulationCytostatiquesQuestion" style="display: none;">
+            <label for="anneesManipulationCytostatiques">Depuis combien d'années :</label>
+            <input type="number" id="anneesManipulationCytostatiques" name="anneesManipulationCytostatiques">
+        </div><br><br>
+
+        <label for="manipulationFormaldehyde">Manipulation de Formaldéhyde :</label>
+        <div>
+            <input type="radio" id="manipulationFormaldehydeOui" name="manipulationFormaldehyde" value="Oui">Oui
+            <input type="radio" id="manipulationFormaldehydeNon" name="manipulationFormaldehyde" value="Non">Non
+        </div><br><br>
+
+        <div id="anneesManipulationFormaldehydeQuestion" style="display: none;">
+            <label for="anneesManipulationFormaldehyde">Depuis combien d'années :</label>
+            <input type="number" id="anneesManipulationFormaldehyde" name="anneesManipulationFormaldehyde">
+        </div><br><br>
+
+        <label for="expositionRayonnementsIonisants">Exposition aux Rayonnements Ionisants :</label>
+        <div>
+            <input type="radio" id="expositionRayonnementsIonisantsOui" name="expositionRayonnementsIonisants" value="Oui">Oui
+            <input type="radio" id="expositionRayonnementsIonisantsNon" name="expositionRayonnementsIonisants" value="Non">Non
+        </div><br><br>
+
+        <div id="anneesExpositionRayonnementsIonisantsQuestion" style="display: none;">
+            <label for="anneesExpositionRayonnementsIonisants">Depuis combien d'années :</label>
+            <input type="number" id="anneesExpositionRayonnementsIonisants" name="anneesExpositionRayonnementsIonisants">
+        </div><br><br>
+
+        <label for="autoPalpationSeins">Faites-vous l'auto-palpation des seins :</label>
+        <div>
+            <input type="radio" id="autoPalpationSeinsOui" name="autoPalpationSeins" value="Oui">Oui
+            <input type="radio" id="autoPalpationSeinsNon" name="autoPalpationSeins" value="Non">Non
+        </div><br><br>
+
+        <label for="agePremieresRegles">Âge des Premières Règles :</label>
+        <input type="number" id="agePremieresRegles" name="agePremieresRegles"><br><br>
+
+        <label for="menopause">Ménopause :</label>
+        <div>
+            <input type="radio" id="menopauseOui" name="menopause" value="Oui">Oui
+            <input type="radio" id="menopauseNon" name="menopause" value="Non">Non
+       
+        </div><br><br>
+
+        <div id="ageMenopauseQuestion" style="display: none;">
+            <label for="ageMenopause">Âge de la Ménopause :</label>
+            <input type="number" id="ageMenopause" name="ageMenopause">
+        </div><br><br>
+
+        <label for="nombreGrossesses">Nombre de Grossesses :</label>
+        <input type="number" id="nombreGrossesses" name="nombreGrossesses"><br><br>
+
+        <label for="allaitementSein">Allaitement au Sein :</label>
+        <div>
+            <input type="radio" id="allaitementSeinOui" name="allaitementSein" value="Oui">Oui
+            <input type="radio" id="allaitementSeinNon" name="allaitementSein" value="Non">Non
+        </div><br><br>
+
+        <div id="dureeAllaitementQuestion" style="display: none;">
+            <label for="dureeAllaitement">Durée totale (en mois) :</label>
+            <input type="number" id="dureeAllaitement" name="dureeAllaitement">
+        </div><br><br>
+
+        <label for="mammographie">Mammographie :</label>
+        <div>
+            <input type="radio" id="mammographieOui" name="mammographie" value="Oui">Oui
+            <input type="radio" id="mammographieNon" name="mammographie" value="Non">Non
+        </div><br><br>
+
+        <label for="echographieMammaire">Échographie Mammaire :</label>
+        <div>
+            <input type="radio" id="echographieMammaireOui" name="echographieMammaire" value="Oui">Oui
+            <input type="radio" id="echographieMammaireNon" name="echographieMammaire" value="Non">Non
+        </div><br><br>
+
+        <label for="derniereDate">Dernière Datant :</label>
+        <input type="date" id="derniereDate" name="derniereDate"><br><br>
+
+        <label for="resultat">Résultat :</label>
+        <input type="text" id="resultat" name="resultat"><br><br>
+
+        <label for="rythmicite">Rythmicité :</label>
+        <select id="rythmicite" name="rythmicite">
+            <option value="<1fois/2ans">&lt;1 fois/2 ans</option>
+            <option value="1fois/2ans">1 fois/2 ans</option>
+            <option value=">1fois/2ans">&gt;1 fois/2 ans</option>
+        </select><br><br>
+
+        <input type="submit" value="Soumettre" name="submit">
+    </form>
+
+    <script>
+        const poidsInput = document.getElementById("poids");
+        const tailleInput = document.getElementById("taille");
+        const imcValue = document.getElementById("imcValue");
+
+        poidsInput.addEventListener("input", calculateIMC);
+        tailleInput.addEventListener("input", calculateIMC);
+
+        function calculateIMC() {
+            const poids = parseFloat(poidsInput.value);
+            const taille = parseFloat(tailleInput.value);
+            const imc = poids / (taille * taille);
+
+            if (!isNaN(imc)) {
+                imcValue.textContent = imc.toFixed(2);
+            } else {
+                imcValue.textContent = "N/A";
+            }
+        }
+ const tabagismeOui = document.getElementById("tabagismeOui");
+    const paquetsAnneesQuestion = document.getElementById("paquetsAnneesQuestion");
+
+    tabagismeOui.addEventListener("change", () => {
+        paquetsAnneesQuestion.style.display = tabagismeOui.checked ? "block" : "none";
+    });
+
+        const contraceptifsOrauxOui = document.getElementById("contraceptifsOrauxOui");
+        const dureeContraceptifsQuestion = document.getElementById("dureeContraceptifsQuestion");
+
+        contraceptifsOrauxOui.addEventListener("change", () => {
+            dureeContraceptifsQuestion.style.display = contraceptifsOrauxOui.checked ? "block" : "none";
+        });
+
+        const atcdsPersonnelsOui = document.getElementById("atcdsPersonnelsOui");
+        const preciserATCDSPersonnelsQuestion = document.getElementById("preciserATCDSPersonnelsQuestion");
+
+        atcdsPersonnelsOui.addEventListener("change", () => {
+            preciserATCDSPersonnelsQuestion.style.display = atcds
+            preciserATCDSPersonnelsQuestion.style.display = atcdsPersonnelsOui.checked ? "block" : "none";
+    });
+
+    const atcdsFamiliauxOui = document.getElementById("atcdsFamiliauxOui");
+    const preciserATCDSFamiliauxQuestion = document.getElementById("preciserATCDSFamiliauxQuestion");
+
+    atcdsFamiliauxOui.addEventListener("change", () => {
+        preciserATCDSFamiliauxQuestion.style.display = atcdsFamiliauxOui.checked ? "block" : "none";
+    });
+
+    const travailDeNuitOui = document.getElementById("travailDeNuitOui");
+    const anneesTravailDeNuitQuestion = document.getElementById("anneesTravailDeNuitQuestion");
+
+    travailDeNuitOui.addEventListener("change", () => {
+        anneesTravailDeNuitQuestion.style.display = travailDeNuitOui.checked ? "block" : "none";
+    });
+
+    const manipulationCytostatiquesOui = document.getElementById("manipulationCytostatiquesOui");
+    const anneesManipulationCytostatiquesQuestion = document.getElementById("anneesManipulationCytostatiquesQuestion");
+
+    manipulationCytostatiquesOui.addEventListener("change", () => {
+        anneesManipulationCytostatiquesQuestion.style.display = manipulationCytostatiquesOui.checked ? "block" : "none";
+    });
+
+    const manipulationFormaldehydeOui = document.getElementById("manipulationFormaldehydeOui");
+    const anneesManipulationFormaldehydeQuestion = document.getElementById("anneesManipulationFormaldehydeQuestion");
+
+    manipulationFormaldehydeOui.addEventListener("change", () => {
+        anneesManipulationFormaldehydeQuestion.style.display = manipulationFormaldehydeOui.checked ? "block" : "none";
+    });
+
+    const expositionRayonnementsIonisantsOui = document.getElementById("expositionRayonnementsIonisantsOui");
+    const anneesExpositionRayonnementsIonisantsQuestion = document.getElementById("anneesExpositionRayonnementsIonisantsQuestion");
+
+    expositionRayonnementsIonisantsOui.addEventListener("change", () => {
+        anneesExpositionRayonnementsIonisantsQuestion.style.display = expositionRayonnementsIonisantsOui.checked ? "block" : "none";
+    });
+</script>
+</body>
+</html>
+

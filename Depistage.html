@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulaire médical</title>
+    <style>
+        #formulaire_A {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="formulaire_principal">
+        <label for="techniques">Techniques :</label>
+        <select id="techniques" name="techniques">
+            <option value="mamo">Mamo</option>
+            <option value="echo">Echo</option>
+            <option value="mamo_echo">Mamo + Echo</option>
+        </select>
+
+        <fieldset id="resultat">
+            <legend>Résultat</legend>
+
+            <label for="ADP_Axillaire">ADP Axillaire :</label>
+            <input type="number" id="ADP_Axillaire" name="ADP_Axillaire" min="0">
+        </fieldset>
+        
+        <div id="formulaire_A">
+            <form>
+                <fieldset>
+                    <legend>Formulaire A</legend>
+                    <h5>Localisation :</h5>
+                    <label for="Rayon_Horaire">Rayon Horaire :</label>
+                    <input type="number" id="Rayon_Horaire" name="Rayon_Horaire" min="0" max="12">
+                    
+                    <label for="Distance_par_rapport_a_mamelon">Distance par rapport à mamelon :</label>
+                    <input type="number" id="Distance_par_rapport_a_mamelon" name="Distance_par_rapport_a_mamelon" min="0" max="10">
+                    
+                    <label for="birds">Nombre de birds :</label>
+                    <input type="number" id="birds" name="birds" min="0" max="6">
+                </fieldset>
+            </form>
+        </div>
+
+        <input type="submit" value="Soumettre">
+    </form>
+
+    <script>
+        document.getElementById('ADP_Axillaire').addEventListener('input', function() {
+            const value = this.value;
+            const formulaireA = document.getElementById('formulaire_A');
+            if (value > 0) {
+                formulaireA.style.display = 'block';
+            } else {
+                formulaireA.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

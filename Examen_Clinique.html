@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau d'Inspection Médicale</title>
+    <style>
+        /* Styles CSS pour le tableau */
+        /* Styles CSS pour le tableau */
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            float: right;
+            margin-right: 500px; /* Ajustez la marge selon vos besoins */
+            width: 500px; /* Ajustez la largeur de l'image selon vos besoins */
+        }
+
+        #imageContainer1,
+        #imageContainer2 {
+            position: relative;
+        }
+
+        .cross {
+            position: absolute;
+            color: rgb(250, 2, 97);
+            font-size: 20px;
+        }
+
+        .btn-container {
+            text-align: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn-reset {
+            background-color: #ccc;
+            margin-left: 10px;
+        }
+
+        form {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+
+        .conclusion {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+        }
+        .cross {
+            position: absolute;
+            color: rgb(250, 2, 97);
+            font-size: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <script>
+    // Fonction pour ajouter une croix rouge sur l'image
+    function ajouterCroixSurImage(event) {
+        const croix = document.createElement("div");
+        croix.className = "cross";
+        croix.innerHTML = "✖";
+        croix.style.left = `${event.clientX - event.target.getBoundingClientRect().left}px`;
+        croix.style.top = `${event.clientY - event.target.getBoundingClientRect().top}px`;
+        croix.addEventListener("click", (e) => {
+            e.target.remove(); // Supprimer la croix lorsqu'elle est cliquée
+        });
+
+        // Ajouter la croix directement sur l'image
+        event.target.appendChild(croix);
+    }
+    </script>
+    <form action="">
+        <div id="imageContainer">
+            <img id="image1" src="Sein.png" alt="Image 1" onclick="ajouterCroixSurImage(event)">
+        </div>
+    <table>
+        <tr>
+            <th>Inspection</th>
+            <th>Sein Droit</th>
+            <th>Sein Gauche</th>
+        </tr>
+        <tr>
+            <td>Pas de Lésion</td>
+            <td><input type="checkbox" name="seindroit_lesion"></td>
+            <td><input type="checkbox" name="seingauche_lesion"></td>
+        </tr>
+        <tr>
+            <td>Cicatrice</td>
+            <td><input type="checkbox" name="seindroit_cicatrice"></td>
+            <td><input type="checkbox" name="seingauche_cicatrice"></td>
+        </tr>
+        <tr>
+            <td>Naevus-verrue</td>
+            <td><input type="checkbox" name="seindroit_naevus"></td>
+            <td><input type="checkbox" name="seingauche_naevus"></td>
+        </tr>
+        <tr>
+            <td>Retraction Peau</td>
+            <td><input type="checkbox" name="seindroit_retraction"></td>
+            <td><input type="checkbox" name="seingauche_retraction"></td>
+        </tr>
+        <tr>
+            <td rowspan="4">Mamelon</td>
+            <td><input type="checkbox" name="seindroit_mamelon_normal"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_normal"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="seindroit_mamelon_devie"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_devie"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="seindroit_mamelon_retracte"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_retracte"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="seindroit_mamelon_erosion"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_erosion"></td>
+        </tr>
+
+
+        <tr>
+            <td>Naevus-verrue</td>
+            <td><input type="checkbox" name="seindroit_naevus"></td>
+            <td><input type="checkbox" name="seingauche_naevus"></td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="4">œdème</td>
+            <td><input type="checkbox" name="seindroit_mamelon_normal"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_normal"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="seindroit_mamelon_devie"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_devie"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="seindroit_mamelon_retracte"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_retracte"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="seindroit_mamelon_erosion"></td>
+            <td><input type="checkbox" name="seingauche_mamelon_erosion"></td>
+        </tr>
+
+        <tr>
+            <td rowspan="4">Rougeur</td>
+            <td><textarea name="normdroit" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="normgauch" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+        </tr>
+        <tr>
+            <td><textarea name="limdroi" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="limgauch" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+        </tr>
+        <tr>
+            <td><textarea name="seindroit" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="seingauche" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+        </tr>
+        <tr>
+            <td><textarea name="toutseindroit" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="toutseingauche" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+        </tr>
+
+        <tr>
+            <td>Asymétrie de Volume</td>
+            <td colspan="2">
+                <input type="checkbox" id="asymetrie_checkbox">
+                <label for="asymetrie_checkbox">Asymétrie</label><br>
+                <input type="text" id="asymetrie_texte" placeholder="Entrez votre texte ici">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Observation (Traumatisme, Prothes)</td>
+            <td colspan="2">
+                <input type="text" name="observation_texte" placeholder="Entrez vos observations ici">
+            </td>
+        </tr>
+    </table>
+
+    <div id="imageContainer2">
+        <img id="image1" src="Sein.png" alt="Image 2" onclick="ajouterCroixSurImage(event)">
+    </div>
+
+    <table>
+        <tr>
+            <th>Inspection</th>
+            <th>Sein Droit</th>
+            <th>Sein Gauche</th>
+        </tr>
+        <tr>
+            <td>Pas de Lésion</td>
+            <td><input type="checkbox" name="seindroit_lesion1"></td>
+            <td><input type="checkbox" name="seingauche_lesion1"></td>
+        </tr>
+
+        <tr>
+            <td rowspan="5">Nodule</td>
+            <td><input type="checkbox" name="fixe1"></td>
+            <td><input type="checkbox" name="fixe2"></td>
+            
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="mobile1"></td>
+            <td><input type="checkbox" name="mobile2"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="elastique1"></td>
+            <td><input type="checkbox" name="elastique2"></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="dur1"></td>
+            <td><input type="checkbox" name="dur2"></td>
+        </tr>
+        <tr>
+            <td><textarea name="tailledroit" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="taillegauche" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+        </tr>
+
+
+        <tr>
+            <td rowspan="2">Placard</td>
+            <td><textarea name="seindroit_placard" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="seindroit_placard" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            
+        </tr>
+        <tr>
+            <td><textarea name="seinGauche_placard" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+            <td><textarea name="seinGauche_placard" rows="4" cols="30" placeholder="Saisissez vos observations pour le sein droit ici"></textarea></td>
+        </tr>
+
+        <tr>
+            <td>Écoulement Mammaire</td>
+            <td>
+                <input type="text" name="ecoulement_mammaire_colonne_2">
+            </td>
+            <td>
+                <input type="text" name="ecoulement_mammaire_colonne_3">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Aire Ganglionnaire</td>
+            <td>
+                <input type="checkbox" id="aireGanglionnaireDroit" name="aireGanglionnaireDroit">
+                <label for="aireGanglionnaireDroit">Libre</label>
+                <input type="checkbox" id="aireGanglionnaireDroitADP" name="aireGanglionnaireDroitADP">
+                <label for="aireGanglionnaireDroitADP">ADP</label>
+            </td>
+            <td>
+                <input type="checkbox" id="aireGanglionnaireGauche" name="aireGanglionnaireGauche">
+                <label for="aireGanglionnaireGauche">Libre</label>
+                <input type="checkbox" id="aireGanglionnaireGaucheADP" name="aireGanglionnaireGaucheADP">
+                <label for="aireGanglionnaireGaucheADP">ADP</label>
+            </td>
+        </tr>
+        
+
+        <tr>
+            <td>Observation</td>
+            <td colspan="2">
+                <input type="text" name="observation_texte" placeholder="Entrez vos observations ici">
+            </td>
+        </tr>
+
+    </table>
+    <br>
+
+    <textarea class="conclusion" name="conclusion_generale" placeholder="Conclusion générale"></textarea>
+    <div class="btn-container">
+        <button type="submit" class="btn">Depistage</button>
+        <button type="reset" class="btn btn-reset"></button>
+    </div>
+</form>
+</body>
+</html>

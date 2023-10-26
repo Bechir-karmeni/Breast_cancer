@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matri</title>
+    <style>
+        /* Style CSS pour masquer les champs 1 et 2 initialement */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>CAT</legend>
+            
+            <!-- Champ 1 : Pas d'exploration Complémentaire -->
+            <input type="radio" id="pasExploration" name="explorationType" value="pasExploration">
+            <label for="pasExploration">Pas d'exploration Complémentaire</label>
+            
+            <!-- Champ 2 : Contrôle -->
+            <input type="radio" id="controle" name="explorationType" value="controle">
+            <label for="controle">Contrôle</label>
+            
+            <!-- Champ 3 : Complément d'exploration -->
+            <input type="radio" id="complementExploration" name="explorationType" value="complementExploration">
+            <label for="complementExploration">Complément d'exploration</label>
+            
+            <!-- Champ 1 : Examen -->
+            <div class="hidden" id="champExamen">
+                <input type="checkbox" id="examen" name="examen">
+                <label for="examen">Examen</label>
+            </div>
+            
+            <!-- Champ 2 : Délai -->
+            <div class="hidden" id="champDelai">
+                <input type="checkbox" id="delai" name="delai">
+                <label for="delai">Délai</label>
+            </div>
+            
+            <!-- Champ 1 : IRM Mammaire -->
+            <div class="hidden" id="champIRM">
+                <input type="checkbox" id="irmMammaire" name="irmMammaire">
+                <label for="irmMammaire">IRM Mammaire</label>
+            </div>
+            
+            <!-- Champ 2 : Vérification Histologique -->
+            <div class="hidden" id="champHistologique">
+                <input type="checkbox" id="verificationHistologique" name="verificationHistologique">
+                <label for="verificationHistologique">Vérification Histologique</label>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        // Écouter les événements de changement de statut des boutons radio
+        const radios = document.querySelectorAll('input[type="radio"]');
+        radios.forEach(radio => {
+            radio.addEventListener("change", () => {
+                // Masquer tous les champs checkbox
+                champExamen.classList.add("hidden");
+                champDelai.classList.add("hidden");
+                champIRM.classList.add("hidden");
+                champHistologique.classList.add("hidden");
+
+                // Afficher les champs appropriés en fonction du choix radio
+                if (radio.value === "controle") {
+                    champExamen.classList.remove("hidden");
+                    champDelai.classList.remove("hidden");
+                } else if (radio.value === "complementExploration") {
+                    champIRM.classList.remove("hidden");
+                    champHistologique.classList.remove("hidden");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
