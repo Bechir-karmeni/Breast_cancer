@@ -1,0 +1,145 @@
+/*
+ *   Copyright (c) 2023 
+ *   All rights reserved.
+ */
+
+
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Réduire la taille des champs de date */
+input[type="date"] {
+    width: 380px; /* Ajustez la largeur selon vos préférences */
+    padding: 5px; /* Ajustez la marge intérieure (padding) selon vos préférences */
+}
+
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#imcValue {
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Réduire la taille des champs de texte */
+input[type="text"],
+input[type="number"],
+select {
+    width: 200px; /* Ajustez la largeur selon vos préférences */
+    padding: 5px; /* Ajustez la marge intérieure (padding) selon vos préférences */
+}
+
+
+/* Styles pour les questions conditionnelles */
+div[id$="Question"] {
+    display: none;
+    margin-top: 10px;
+}
+
+input[type="radio"]:checked ~ div[id$="Question"] {
+    display: block;
+}
+
+input[type="radio"]:checked ~ div[id$="Question"] textarea {
+    display: block;
+}
+
+/* Styles pour la partie "Régime Alimentaire" */
+
+/* Styles généraux pour les options */
+label[for^="glucides"],
+label[for^="lippides"],
+label[for^="fruits"],
+label[for^="legumes"],
+label[for^="cereales"],
+label[for^="viandesRouges"],
+label[for^="sel"] {
+    display: block;
+    margin: 5px 0;
+    font-weight: normal;
+    color: #333;
+}
+
+/* Styles pour les options "Oui" */
+input[type="radio"][id^="glucidesOui"],
+input[type="radio"][id^="lippidesOui"],
+input[type="radio"][id^="fruitsOui"],
+input[type="radio"][id^="legumesOui"],
+input[type="radio"][id^="cerealesOui"],
+input[type="radio"][id^="viandesRougesOui"],
+input[type="radio"][id^="selOui"] {
+    margin-right: 5px;
+}
+
+/* Styles pour les options "Non" */
+input[type="radio"][id^="glucidesNon"],
+input[type="radio"][id^="lippidesNon"],
+input[type="radio"][id^="fruitsNon"],
+input[type="radio"][id^="legumesNon"],
+input[type="radio"][id^="cerealesNon"],
+input[type="radio"][id^="viandesRougesNon"],
+input[type="radio"][id^="selNon"] {
+    margin-right: 5px;
+}
+
+/* Style pour le texte des options */
+label[for^="glucides"],
+label[for^="lippides"],
+label[for^="fruits"],
+label[for^="legumes"],
+label[for^="cereales"],
+label[for^="viandesRouges"],
+label[for^="sel"] {
+    display: inline-block;
+    width: 100px; /* Ajustez la largeur selon vos besoins */
+}
